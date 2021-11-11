@@ -41,11 +41,12 @@ def info():
 @app.route('/purchase/<id>', methods=["PUT"])
 def purchase_api(id): 
     r = requests.put("http://127.0.0.1:5003/purchase/"+id) 
-    return r.text
+    js = r.json()
+    return js["status"]
 
 @app.route('/purchase', methods=["PUT"])
 def purchase():  
-    return {"status":"fail, Item ID is needed"}
+    return "fail, Item ID is needed"
 
 
 if __name__ == "__main__":
