@@ -8,20 +8,23 @@
 
 # Catalog sevices  
 ```
-query/search/<catalog_name>
-query/search
-query/info/<item_ID>
-query/info
-update/<item_ID>
-
+http://CATALOG_IP/query/search/<category_name>
+http://CATALOG_IP/query/search
+http://CATALOG_IP/query/info/<item_ID>
+http://CATALOG_IP/query/info
+http://CATALOG_IP/update/<item_ID>
 ```
 
 # Order servies 
 ```
-purchse/<item_ID>
-
+http://ORDER_IP/purchse/<item_ID>
 ```
 
 # Front
 ```
-info/
+http://FRONT_IP/search/<category_name>
+http://FRONT_IP/search
+http://FRONT_IP/info/<item_ID>
+http://FRONT_IP/info
+http://FRONT_IP/purchase/<item_ID>
+```
