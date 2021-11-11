@@ -102,12 +102,13 @@ def order(id):
         return {"status":"fail, NO such book"}
 
     q = int(data[(data.id == int(id))]['quantity'])
-
+    jsonArray = make_json('db.csv')
+    name = jsonArray[int(id)-1]['title']
     if(q == 0):
         return {"status":"fail, all soled"}
     
     update_db(id,q-1)
-    return {"status":"success"}
+    return {"status":"bought book "+name}
 
 
 if __name__ == "__main__":
