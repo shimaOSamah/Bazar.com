@@ -20,7 +20,7 @@ def login():
 
 @app.route('/purchase/<id>', methods=['PUT'])
 def search_api(id):  
-    r = requests.get('http://127.0.0.1:5002/query/info/'+id)
+    r = requests.get('http://192.168.187.130:5000/query/info/'+id)
     js = r.json()
 
     if(len(js)==0):
@@ -28,12 +28,12 @@ def search_api(id):
 
     q = js[0]["quantity"]
     if(int(q) > 0):
-        rs = requests.put('http://127.0.0.1:5002/update/'+id)
+        rs = requests.put('http://192.168.187.130:5000/update/'+id)
         return rs.text
 
     return {"status":"fail, all soled"}
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5003, host="127.0.0.1") 
+    app.run(debug=True, port=5003, host="192.168.187.129") 
 
 
